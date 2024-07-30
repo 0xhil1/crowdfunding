@@ -22,7 +22,7 @@ contract CrowdFunding is ICrowdFunding, Ownable, ReentrancyGuard {
     address public fundingTreasury;
 
     // Funding Goal info
-    FundingGoal public fundGoal;
+    FundingGoal internal fundGoal;
 
     constructor(address owner) Ownable(owner) {}
 
@@ -40,6 +40,13 @@ contract CrowdFunding is ICrowdFunding, Ownable, ReentrancyGuard {
         if (totalDeposits >= fundGoal.goalAmount) revert Errors.FULLY_FUNDED();
 
         _;
+    }
+
+    /** 
+      * @notice View function to check the funding goal info
+      */
+    function getFundGoal() external view returns(FundingGoal memory) {
+        return fundGoal;
     }
 
     /** 
@@ -84,7 +91,7 @@ contract CrowdFunding is ICrowdFunding, Ownable, ReentrancyGuard {
       */
     function withdraw() external nonReentrant notFullyFunded {
         // Check fund is in progress
-        if (block.timestamp < fundGoal.deadline) revert Errors.FUND_IN_PROGRESS();
+        if (block.timestamp <= fundGoal.deadline) revert Errors.FUND_IN_PROGRESS();
 
         uint256 withdrawAmount = userDeposits[msg.sender];
         if (withdrawAmount == 0)
