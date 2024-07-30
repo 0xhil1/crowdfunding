@@ -1,4 +1,4 @@
-## Simple CrowdFunding
+## Simple CrowdFunding using Foundry
 
 ### Build
 
@@ -11,11 +11,7 @@ $ forge build
 ```shell
 $ forge test
 ```
+![Screenshot 2024-07-31 at 4 43 53 AM](https://github.com/user-attachments/assets/2dad6fd3-0bae-4bb1-b93b-b0aec849f15e)
 
-### Format
-
-```shell
-$ forge fmt
-```
 
 ### Deployed addresses on Sepolia
