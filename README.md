@@ -11,6 +11,7 @@ $ forge build
 ```shell
 $ forge test
 ```
+
 ![Screenshot 2024-07-31 at 4 43 53 AM](https://github.com/user-attachments/assets/2dad6fd3-0bae-4bb1-b93b-b0aec849f15e)
 
 ### Deployment
@@ -21,7 +22,12 @@ Create .env from .env.example and update the values then run:
 $ forge script --chain sepolia script/DeployCrowdFunding.sol:DeployCrowdFunding --rpc-url $SEPOLIA_RPC_URL --broadcast --verify -vvvv
 ```
 
-
 ### Deployed addresses on Sepolia
 
 Sepolia: [0x27841cd89E9996c6AD39D3f772fE637F4C7A4622](https://sepolia.etherscan.io/address/0x27841cd89E9996c6AD39D3f772fE637F4C7A4622)
+
+### Tech skills
+
+- To prevent the reentrancy attacks, used the [openzeppelin ReentrancyGuard](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/ReentrancyGuard.sol) contract
+- For the Access management, used the [openzeppelin Ownable](https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol) contract
+- Created `notFullyFunded` modifier enabling `withdraw/deposit` in only the `Fund Goal Not Met` cases
