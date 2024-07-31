@@ -18,7 +18,7 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 - [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-- [Install Node v20](https://heynode.com/tutorial/install-nodejs-locally-nvm)
+- [Install Node v18](https://heynode.com/tutorial/install-nodejs-locally-nvm)
 
 ### Installation
 
@@ -57,4 +57,4 @@ npm run build
 yarn build
 ```
 
-- [Deployed vercel link](https://simple-vault.vercel.app/)
+- [Deployed vercel link](https://crowdfunding-alpha-one.vercel.app/)
